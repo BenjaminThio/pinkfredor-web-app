@@ -136,11 +136,11 @@ function MusicPlayer(props: any): JSX.Element {
         let next_idx = 0;
         for (let i = 0; i < queue.length; i++) {
             if (queue[i].current && i < queue.length - 1) {
-                if (isShuffle == false) {
+                if (isShuffle === false) {
                     next_idx = i + 1;
                 }
-                else if (isShuffle == true) {
-                    next_idx = i + Math.floor(Math.random() * queue.length);
+                else if (isShuffle === true) {
+                    next_idx = Math.floor(Math.random() * queue.length);
                 }
             }
             queue[i].current = false;
@@ -180,7 +180,7 @@ function MusicPlayer(props: any): JSX.Element {
     };
 
     const Shuffle = () => {
-        if (isShuffle == false) {
+        if (isShuffle === false) {
             setColor1('white');
             setisShuffle(true);
         }
@@ -191,7 +191,7 @@ function MusicPlayer(props: any): JSX.Element {
     };
 
     const Loop = () => {
-        if (isLoop == false) {
+        if (isLoop === false) {
             setColor2('white');
             setisLoop(true);
         }
